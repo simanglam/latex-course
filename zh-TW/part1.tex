@@ -1,0 +1,502 @@
+\documentclass{beamer}
+
+\input{preamble.tex}
+
+\subtitle{第一部：基礎}
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\titlepage
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{為什麼使用 \LaTeX{}？}
+\begin{itemize}
+\item 高品質的文件
+\begin{itemize}
+\item 特別是跟數學有關的
+\end{itemize}
+%
+\item 被科學家為科學家創造
+\begin{itemize}
+\item 龐大且活躍的使用者社群
+\end{itemize}
+%
+\item 強大、靈活 --- 你甚至可以自行擴展
+\begin{itemize}
+\item 針對論文、報告、試算表\ldots\ 的巨集 \ldots
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\LaTeX\ 是如何工作的？}
+\begin{itemize}
+\item 你將文件用純文字(plain text)與描述文字結構和意義的命令(\cmd{commands})
+\item \texttt{latex} 將你的文字與命令轉換成格式優美的文件
+\end{itemize}
+\vskip 2ex
+\begin{center}
+\begin{minted}[frame=single]{latex}
+The rain in Spain falls \emph{mainly} on the plain.
+\end{minted}
+\vskip 2ex
+\tikz\node[single arrow,fill=gray,font=\ttfamily\bfseries,%
+  rotate=270,xshift=-1em]{latex};
+\vskip 2ex
+\fbox{The rain in Spain falls \emph{mainly} on the plain.}
+\end{center}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{更多範例}%\ldots
+\begin{exampletwoup}
+\begin{itemize}
+\item 茶
+\item 牛奶
+\item 餅乾
+\end{itemize}
+\end{exampletwoup}
+\vskip 2ex
+\begin{exampletwoup}
+\begin{figure}
+\includegraphics{gerbil}
+\end{figure}
+\end{exampletwoup}
+\vskip 2ex
+\begin{exampletwoup}
+\begin{equation}
+\alpha + \beta + 1
+\end{equation}
+\end{exampletwoup}
+
+\tiny{Image license: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Attitude adjustment}
+
+\begin{itemize}
+\item 使用命令去描述他是什麼，而不是他是看起來怎樣
+\item 專注在你的文件內容裡
+\item 讓\LaTeX{}完成他的工作
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{基礎}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{準備開始}
+\begin{frame}[fragile]{\insertsubsection}
+\begin{itemize}
+\item 最簡單的\LaTeX{}文件：
+\inputminted[frame=single]{latex}{basics.tex}
+\item 指令以\emph{反斜線}開頭的\keystrokebftt{\bs}.
+\item 所有文件都以\cmdbs{documentclass}為開頭
+\item \emph{引數}被花括號包圍\keystrokebftt{\{} \keystrokebftt{\}}告訴 \LaTeX{}我們想要的文件類型\bftt{article}.
+\item 百分符號\keystrokebftt{\%}開始註解\emph{comment} --- \LaTeX{}會忽略該行剩餘的部分
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{} 與 \wllogo}
+\begin{itemize}
+\item Overleaf是線上的\LaTeX 編譯器
+\item 他自動編譯你的 \LaTeX{}文件並產出結果
+\vskip 2em
+\begin{center}
+\fbox{\href{\wlnewdoc{basics.tex}}{%
+點擊這裡以在\wllogo{}中打開範例文件}}
+\\[1ex]\scriptsize{}
+為得到最好的使用體驗，推薦使用 \href{http://www.google.com/chrome}{Google Chrome} 或 \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox}.
+\end{center}
+\vskip 2ex
+\item As we go through the following slides, try out the examples by typing them
+into the example document on Overleaf.
+\item \textbf{No really, you should try them out as we go!}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{基礎排版}
+\begin{frame}[fragile]{\insertsubsection{}}
+\small
+\begin{itemize}
+\item 將你的文字打在 \cmdbegin{document}與\cmdend{document}之間
+\item 在大多分的時間，你就正常的打字%怪怪的，要修
+\begin{exampletwouptiny}
+文字被一個 或更多  的空格分離
+
+段落被一個或更多的空白行分離
+\end{exampletwouptiny}
+\item Space in the source file is collapsed in the output.
+\begin{exampletwouptiny}
+The   rain       in Spain
+falls mainly on the plain.
+\end{exampletwouptiny}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}：注意事項}
+\small
+\begin{itemize}
+\item Quotation marks are a bit tricky:\\
+use a backtick \keystroke{\`{}} on the left and an apostrophe \keystroke{\'{}} on the right.
+\begin{exampletwouptiny}
+Single quotes: `text'.
+
+Double quotes: ``text''.
+\end{exampletwouptiny}
+
+\item Some common characters have special meanings in \LaTeX:\\[1ex]
+\begin{tabular}{cl}
+\keystrokebftt{\%} & percent sign              \\
+\keystrokebftt{\#} & hash (pound / sharp) sign \\
+\keystrokebftt{\&} & ampersand                 \\
+\keystrokebftt{\$} & dollar sign               \\
+\end{tabular}
+\item If you just type these, you'll get an error. If you want one to appear in
+the output, you have to \emph{escape} it by preceding it with a backslash.
+\begin{exampletwoup}
+\$\%\&\#!
+\end{exampletwoup}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Handling Errors}
+\begin{itemize}
+\item \LaTeX{} can get confused when it is trying to compile your document. If
+it does, it stops with an error, which you must fix before it will produce
+any output.
+\item For example, if you misspell \cmdbs{emph} as \cmdbs{meph}, \LaTeX{} will
+stop with an ``undefined control sequence'' error, because ``meph'' is not
+one of the commands it knows.
+\end{itemize}
+\begin{block}{Advice on Errors}
+\begin{enumerate}
+\item Don't panic! Errors happen.
+\item Fix them as soon as they arise --- if what you just typed caused an error,
+you can start your debugging there.
+\item If there are multiple errors, start with the first one --- the cause may
+even be above it.
+\end{enumerate}
+\end{block}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{牛刀小試}
+
+\begin{block}{Typeset this in \LaTeX:
+\footnote{\url{http://en.wikipedia.org/wiki/Economy_of_the_United_States}}}
+In March 2006, Congress raised that ceiling an additional \$0.79 trillion to
+\$8.97 trillion, which is approximately 68\% of GDP. As of October 4, 2008, the
+``Emergency Economic Stabilization Act of 2008'' raised the current debt ceiling
+to \$11.3 trillion.
+\end{block}
+\vskip 2ex
+\begin{center}
+\fbox{\href{\wlnewdoc{basics-exercise-1.tex}}{%
+點擊以在\wllogo{}中開啟}}
+\end{center}
+
+\begin{itemize}
+\item 提示：注意那些有特殊意義的符號
+\item 嘗試完之後
+\fbox{\href{\wlnewdoc{basics-exercise-1-solution.tex}}{%
+點擊這裡來看我的解答}}.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Typesetting Mathematics}
+\begin{frame}[fragile]{\insertsubsection{}: Dollar Signs}
+\begin{itemize}
+\item Why are dollar signs \keystrokebftt{\$} special? We use them to mark mathematics in text.\\[1ex]
+\begin{exampletwouptiny}
+% not so good:
+Let a and b be distinct positive
+integers, and let c = a - b + 1.
+
+% much better:
+Let $a$ and $b$ be distinct positive
+integers, and let $c = a - b + 1$.
+\end{exampletwouptiny}
+\item Always use dollar signs in pairs --- one to begin the mathematics, and one
+to end it.
+\item \LaTeX{} handles spacing automatically; it ignores your spaces.
+\begin{exampletwouptiny}
+Let $y=mx+b$ be \ldots
+
+Let $y = m x + b$ be \ldots
+\end{exampletwouptiny}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}: Notation}
+\begin{itemize}
+\item Use caret \keystrokebftt{\^} for superscripts and underscore \keystrokebftt{\_} for subscripts.
+\begin{exampletwouptiny}
+$y = c_2 x^2 + c_1 x + c_0$
+\end{exampletwouptiny}
+\vskip 2ex
+
+\item Use curly braces \keystrokebftt{\{} \keystrokebftt{\}} to group
+superscripts and subscripts.
+\begin{exampletwouptiny}
+$F_n = F_n-1 + F_n-2$     % oops!
+
+$F_n = F_{n-1} + F_{n-2}$ % ok!
+\end{exampletwouptiny}
+\vskip 2ex
+
+\item There are commands for Greek letters and common notation.
+\begin{exampletwouptiny}
+$\mu = A e^{Q/RT}$
+
+$\Omega = \sum_{k=1}^{n} \omega_k$
+\end{exampletwouptiny}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}: Displayed Equations}
+\begin{itemize}
+\item If it's big and scary, \emph{display} it on its own line using
+\cmdbegin{equation} and \cmdend{equation}.\\[2ex]
+\begin{exampletwouptiny}
+The roots of a quadratic equation
+are given by
+\begin{equation}
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}
+         {2a}
+\end{equation}
+where $a$, $b$ and $c$ are \ldots
+\end{exampletwouptiny}
+\vskip 1em
+{\scriptsize Caution: \LaTeX{} mostly ignores your spaces in mathematics, but it
+can't handle blank lines in equations --- don't put blank lines in your
+mathematics.}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Interlude: Environments}
+\begin{itemize}
+\item \bftt{equation} is an \emph{environment} --- a context.
+\item A command can produce different output in different contexts.
+\begin{exampletwouptiny}
+We can write
+$ \Omega = \sum_{k=1}^{n} \omega_k $
+in text, or we can write
+\begin{equation}
+  \Omega = \sum_{k=1}^{n} \omega_k
+\end{equation}
+to display it.
+\end{exampletwouptiny}
+\vskip 2ex
+\item Note how the $\Sigma$ is bigger in the \bftt{equation} environment, and
+how the subscripts and superscripts change position, even though we used the
+same commands.
+\vskip 1em
+{\scriptsize In fact, we could have written \bftt{\$...\$} as
+\cmdbegin{math}\bftt{...}\cmdend{math}.}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Interlude: Environments}
+\begin{itemize}
+\item The \cmdbs{begin} and \cmdbs{end} commands are used to create many
+different environments.
+\vskip 2ex
+
+\item The \bftt{itemize} and \bftt{enumerate} environments generate lists.
+\begin{exampletwouptiny}
+\begin{itemize} % for bullet points
+\item Biscuits
+\item Tea
+\end{itemize}
+
+\begin{enumerate} % for numbers
+\item Biscuits
+\item Tea
+\end{enumerate}
+\end{exampletwouptiny}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{Interlude: Packages}
+
+\begin{itemize}
+\item All of the commands and environments we've used so far are built into
+\LaTeX.
+
+\item \emph{Packages} are libraries of extra commands and environments. There
+are thousands of freely available packages.
+
+\item We have to load each of the packages we want to use with a
+\cmdbs{usepackage} command in the \emph{preamble}.
+
+\item Example: \bftt{amsmath} from the American Mathematical Society.
+\begin{minted}[fontsize=\small,frame=single]{latex}
+\documentclass{article}
+\usepackage{amsmath} % preamble
+\begin{document}
+% now we can use commands from amsmath here...
+\end{document}
+\end{minted}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}: Examples with \bftt{amsmath}}
+\begin{itemize}
+\item Use \bftt{equation*} (``equation-star'') for unnumbered equations.
+\begin{exampletwouptiny}
+\begin{equation*}
+  \Omega = \sum_{k=1}^{n} \omega_k
+\end{equation*}
+\end{exampletwouptiny}
+\item \LaTeX{} treats adjacent letters as variables multiplied together, which
+is not always what you want. \bftt{amsmath} defines commands for many common
+mathematical operators.
+\begin{exampletwouptiny}
+\begin{equation*} % bad!
+ min_{x,y} (1-x)^2 + 100(y-x^2)^2
+\end{equation*}
+\begin{equation*} % good!
+\min_{x,y}{(1-x)^2 + 100(y-x^2)^2}
+\end{equation*}
+\end{exampletwouptiny}
+\item You can use \cmdbs{operatorname} for others.
+\begin{exampletwouptiny}
+\begin{equation*}
+\beta_i =
+\frac{\operatorname{Cov}(R_i, R_m)}
+     {\operatorname{Var}(R_m)}
+\end{equation*}
+\end{exampletwouptiny}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}: Examples with \bftt{amsmath}}
+\begin{itemize}{\small
+\item Align a sequence of equations at the equals sign
+\begin{align*}
+(x+1)^3 &= (x+1)(x+1)(x+1) \\
+        &= (x+1)(x^2 + 2x + 1) \\
+        &= x^3 + 3x^2 + 3x + 1
+\end{align*}
+with the \bftt{align*} environment.
+
+% for whatever reason, this doesn't play well with the twoup environment
+\begin{minted}[fontsize=\small,frame=single]{latex}
+\begin{align*}
+(x+1)^3 &= (x+1)(x+1)(x+1) \\
+        &= (x+1)(x^2 + 2x + 1) \\
+        &= x^3 + 3x^2 + 3x + 1
+\end{align*}
+\end{minted}
+\item An ampersand \keystrokebftt{\&} separates the left column (before the
+$=$) from the right column (after the $=$).
+\item A double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} starts a new
+line.
+}\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{牛刀小試}
+
+\begin{block}{Typeset this in \LaTeX:}
+Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically
+distributed random variables with $\operatorname{E}[X_i] = \mu$ and
+$\operatorname{Var}[X_i] = \sigma^2 < \infty$, and let
+\begin{equation*}
+S_n = \frac{1}{n}\sum_{i=1}^{n} X_i
+\end{equation*}
+denote their mean. Then as $n$ approaches infinity, the random variables
+$\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $N(0, \sigma^2)$.
+\end{block}
+\vskip 2ex
+\begin{center}
+\fbox{\href{\wlnewdoc{basics-exercise-2.tex}}{%
+Click to open this exercise in \wllogo{}}}
+\end{center}
+\begin{itemize}
+\item Hint: the command for $\infty$ is \cmdbs{infty}.
+\item Once you've tried,
+\fbox{\href{\wlnewdoc{basics-exercise-2-solution.tex}}{%
+click here to see my solution}}.
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{End of Part 1}
+\begin{itemize}
+\item 恭喜！你已經學會了如何\ldots
+\begin{itemize}
+\item 在\LaTeX\ 中排版文字
+\item 使用多種不同的指令
+\item 處理發生的問題
+\item 排版美麗的數學公式
+\item 使用多種不同的環境
+\item 使用巨集
+\end{itemize}
+\item 這真神奇
+\item 在Part 2我們將探討如何使用\LaTeX{}寫下有結構的文件，包含了小節、交互引用、圖片和參考書目，下集待續。
+\end{itemize}
+\end{frame}
+
+\end{document}
