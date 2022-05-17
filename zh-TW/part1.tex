@@ -85,7 +85,7 @@ The rain in Spain falls \emph{mainly} on the plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Attitude adjustment}
+\begin{frame}[fragile]{態度調整}
 
 \begin{itemize}
 \item 使用命令去描述他是什麼，而不是他是看起來怎樣
@@ -102,7 +102,7 @@ The rain in Spain falls \emph{mainly} on the plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{準備開始}
+\subsection{正式開始}
 \begin{frame}[fragile]{\insertsubsection}
 \begin{itemize}
 \item 最簡單的\LaTeX{}文件：
@@ -117,7 +117,7 @@ The rain in Spain falls \emph{mainly} on the plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{} 與 \wllogo}
+\begin{frame}[fragile]{使用\wllogo\insertsubsection{}}
 \begin{itemize}
 \item Overleaf是線上的\LaTeX 編譯器
 \item 他自動編譯你的 \LaTeX{}文件並產出結果
@@ -129,9 +129,8 @@ The rain in Spain falls \emph{mainly} on the plain.
 為得到最好的使用體驗，推薦使用 \href{http://www.google.com/chrome}{Google Chrome} 或 \href{http://www.mozilla.org/en-US/firefox/new/}{FireFox}.
 \end{center}
 \vskip 2ex
-\item As we go through the following slides, try out the examples by typing them
-into the example document on Overleaf.
-\item \textbf{No really, you should try them out as we go!}
+\item 課程結束後建議在Overleaf上試試看解決小試身手
+\item \textbf{不！你應該在課程中就嘗試}
 \end{itemize}
 \end{frame}
 
@@ -139,17 +138,19 @@ into the example document on Overleaf.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{基礎排版}
-\begin{frame}[fragile]{\insertsubsection{}}
+\begin{frame}[fragile]{\insertsubsection{}：英文}
 \small
 \begin{itemize}
 \item 將你的文字打在 \cmdbegin{document}與\cmdend{document}之間
-\item 在大多分的時間，你就正常的打字%怪怪的，要修
+\item 大多數的時間就和word無異，只需普通的打出文件內容就好%怪怪的，要修
 \begin{exampletwouptiny}
-文字被一個 或更多  的空格分離
+Words are separated by one or more
+spaces.
 
-段落被一個或更多的空白行分離
+Paragraphs are separated by one
+or more blank lines.
 \end{exampletwouptiny}
-\item Space in the source file is collapsed in the output.
+\item 原始碼中的空白並不代表真實的輸出
 \begin{exampletwouptiny}
 The   rain       in Spain
 falls mainly on the plain.
@@ -163,23 +164,22 @@ falls mainly on the plain.
 \begin{frame}[fragile]{\insertsubsection{}：注意事項}
 \small
 \begin{itemize}
-\item Quotation marks are a bit tricky:\\
-use a backtick \keystroke{\`{}} on the left and an apostrophe \keystroke{\'{}} on the right.
+\item 引號比較刁鑽\\
+使用反引號 \keystroke{\`{}}來打出左引號，撇號 \keystroke{\'{}}打出右引號
 \begin{exampletwouptiny}
 Single quotes: `text'.
 
 Double quotes: ``text''.
 \end{exampletwouptiny}
 
-\item Some common characters have special meanings in \LaTeX:\\[1ex]
+\item 一些常見的符號在\LaTeX\ 有特殊的意義\\[1ex]
 \begin{tabular}{cl}
-\keystrokebftt{\%} & percent sign              \\
-\keystrokebftt{\#} & hash (pound / sharp) sign \\
-\keystrokebftt{\&} & ampersand                 \\
-\keystrokebftt{\$} & dollar sign               \\
+\keystrokebftt{\%} & 百分比記號              \\
+\keystrokebftt{\#} & 井字號 \\
+\keystrokebftt{\&} & 與                 \\
+\keystrokebftt{\$} & 錢幣符號               \\
 \end{tabular}
-\item If you just type these, you'll get an error. If you want one to appear in
-the output, you have to \emph{escape} it by preceding it with a backslash.
+\item 如果你直接打出這些符號那你就只會得到錯誤，為了打出這些這些符號，你必須在每個符號前使用反斜槓來使這些字符\emph{跳脫}他們原本的意義 
 \begin{exampletwoup}
 \$\%\&\#!
 \end{exampletwoup}
@@ -189,22 +189,16 @@ the output, you have to \emph{escape} it by preceding it with a backslash.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Handling Errors}
+\begin{frame}[fragile]{處理錯誤}
 \begin{itemize}
-\item \LaTeX{} can get confused when it is trying to compile your document. If
-it does, it stops with an error, which you must fix before it will produce
-any output.
-\item For example, if you misspell \cmdbs{emph} as \cmdbs{meph}, \LaTeX{} will
-stop with an ``undefined control sequence'' error, because ``meph'' is not
-one of the commands it knows.
+\item \LaTeX{} 在編譯時也可能會出錯，如果它出錯了它將會產出錯誤訊息並停止編譯檔案，你必須將修復這個錯誤，否則\LaTeX{} 將不會產生任何的輸出
+\item 舉個例子，如果你將\cmdbs{emph}誤拼成\cmdbs{meph}, \LaTeX{}會停止編譯並跳出 ``undefined control sequence''的錯誤，因為``meph''並不是已知的命令
 \end{itemize}
-\begin{block}{Advice on Errors}
+\begin{block}{面對錯誤的的建議}
 \begin{enumerate}
-\item Don't panic! Errors happen.
-\item Fix them as soon as they arise --- if what you just typed caused an error,
-you can start your debugging there.
-\item If there are multiple errors, start with the first one --- the cause may
-even be above it.
+\item 不要慌張！錯誤經常發生的
+\item 盡快將他們修復完畢 --- 如果是你剛剛打的東西造成了錯誤，就從該處開始吧！
+\item 如過這裡有多個錯誤，先從第一個錯誤開始 --- 造成的原因還有可能在更上面
 \end{enumerate}
 \end{block}
 \end{frame}
@@ -214,7 +208,7 @@ even be above it.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{牛刀小試}
 
-\begin{block}{Typeset this in \LaTeX:
+\begin{block}{嘗試利用\LaTeX\ 為下面這段文字排版：
 \footnote{\url{http://en.wikipedia.org/wiki/Economy_of_the_United_States}}}
 In March 2006, Congress raised that ceiling an additional \$0.79 trillion to
 \$8.97 trillion, which is approximately 68\% of GDP. As of October 4, 2008, the
@@ -231,29 +225,28 @@ to \$11.3 trillion.
 \item 提示：注意那些有特殊意義的符號
 \item 嘗試完之後
 \fbox{\href{\wlnewdoc{basics-exercise-1-solution.tex}}{%
-點擊這裡來看我的解答}}.
+點擊這裡來看解答}}.
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Typesetting Mathematics}
-\begin{frame}[fragile]{\insertsubsection{}: Dollar Signs}
+\subsection{數學排版}
+\begin{frame}[fragile]{\insertsubsection{}：錢幣符號}
 \begin{itemize}
-\item Why are dollar signs \keystrokebftt{\$} special? We use them to mark mathematics in text.\\[1ex]
+\item 為什麼錢幣符號\keystrokebftt{\$}特別？因為我們用它來標示數學公式\\[1ex]
 \begin{exampletwouptiny}
-% not so good:
+%並不好：
 Let a and b be distinct positive
 integers, and let c = a - b + 1.
 
-% much better:
+%好多了：
 Let $a$ and $b$ be distinct positive
 integers, and let $c = a - b + 1$.
 \end{exampletwouptiny}
-\item Always use dollar signs in pairs --- one to begin the mathematics, and one
-to end it.
-\item \LaTeX{} handles spacing automatically; it ignores your spaces.
+\item 永遠記得使用一對錢幣符號 --- 一個開始一個結束
+\item \LaTeX{} 會自己處理間隙，他會忽略你的空間
 \begin{exampletwouptiny}
 Let $y=mx+b$ be \ldots
 
@@ -265,24 +258,23 @@ Let $y = m x + b$ be \ldots
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Notation}
+\begin{frame}[fragile]{\insertsubsection{}: 標記}
 \begin{itemize}
-\item Use caret \keystrokebftt{\^} for superscripts and underscore \keystrokebftt{\_} for subscripts.
+\item 使用\keystrokebftt{\^}來上標文字，底線\keystrokebftt{\_} 來下標文字
 \begin{exampletwouptiny}
 $y = c_2 x^2 + c_1 x + c_0$
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item Use curly braces \keystrokebftt{\{} \keystrokebftt{\}} to group
-superscripts and subscripts.
+\item 使用花括號 \keystrokebftt{\{} \keystrokebftt{\}}來標示上標文字的群組
 \begin{exampletwouptiny}
-$F_n = F_n-1 + F_n-2$     % oops!
+$F_n = F_n-1 + F_n-2$     % 糟糕!
 
-$F_n = F_{n-1} + F_{n-2}$ % ok!
+$F_n = F_{n-1} + F_{n-2}$ % 正常!
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item There are commands for Greek letters and common notation.
+\item 這裡有一些常見的希臘字母與數學表示法
 \begin{exampletwouptiny}
 $\mu = A e^{Q/RT}$
 
@@ -294,9 +286,9 @@ $\Omega = \sum_{k=1}^{n} \omega_k$
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Displayed Equations}
+\begin{frame}[fragile]{\insertsubsection{}：展示方程式}
 \begin{itemize}
-\item If it's big and scary, \emph{display} it on its own line using
+\item 如果他是巨大且恐怖的，將他獨立\emph{展示}出來，使用
 \cmdbegin{equation} and \cmdend{equation}.\\[2ex]
 \begin{exampletwouptiny}
 The roots of a quadratic equation
@@ -308,19 +300,17 @@ x = \frac{-b \pm \sqrt{b^2 - 4ac}}
 where $a$, $b$ and $c$ are \ldots
 \end{exampletwouptiny}
 \vskip 1em
-{\scriptsize Caution: \LaTeX{} mostly ignores your spaces in mathematics, but it
-can't handle blank lines in equations --- don't put blank lines in your
-mathematics.}
+{\scriptsize 注意：大部分在數學環境中的空間會被\LaTeX{}忽略掉，但\LaTeX{} 無法處理在 equation 中的空白行 --- 不要在數學環境中加入空白行}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Environments}
+\begin{frame}[fragile]{小插曲：環境}
 \begin{itemize}
-\item \bftt{equation} is an \emph{environment} --- a context.
-\item A command can produce different output in different contexts.
+\item \bftt{equation}是個\emph{環境} --- 背景
+\item 指令可能會在不同的環境中產出不同的效果
 \begin{exampletwouptiny}
 We can write
 $ \Omega = \sum_{k=1}^{n} \omega_k $
@@ -331,32 +321,28 @@ in text, or we can write
 to display it.
 \end{exampletwouptiny}
 \vskip 2ex
-\item Note how the $\Sigma$ is bigger in the \bftt{equation} environment, and
-how the subscripts and superscripts change position, even though we used the
-same commands.
+\item 即使我們使用相同的命令，我們還是可以發現，$\Sigma$在\bftt{equation}環境中比較大，並且上下標的位置也有所改變
 \vskip 1em
-{\scriptsize In fact, we could have written \bftt{\$...\$} as
-\cmdbegin{math}\bftt{...}\cmdend{math}.}
+{\scriptsize 事實上\bftt{\$...\$}與\cmdbegin{math}\bftt{...}\cmdend{math}是等價的}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Environments}
+\begin{frame}[fragile]{小插曲：環境}
 \begin{itemize}
-\item The \cmdbs{begin} and \cmdbs{end} commands are used to create many
-different environments.
+\item \cmdbs{begin}與\cmdbs{end}命令被用來創造許多不同的環境
 \vskip 2ex
 
-\item The \bftt{itemize} and \bftt{enumerate} environments generate lists.
+\item \bftt{itemize}與\bftt{enumerate} 環境創造列表
 \begin{exampletwouptiny}
-\begin{itemize} % for bullet points
+\begin{itemize} %以箭頭為標示
 \item Biscuits
 \item Tea
 \end{itemize}
 
-\begin{enumerate} % for numbers
+\begin{enumerate} %以數字為標示
 \item Biscuits
 \item Tea
 \end{enumerate}
@@ -367,24 +353,20 @@ different environments.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{Interlude: Packages}
+\begin{frame}[fragile]{小插曲：Package}
 
 \begin{itemize}
-\item All of the commands and environments we've used so far are built into
-\LaTeX.
+\item 至今為止我們都是使用\LaTeX\ 自帶的命令與環境
+\item \emph{Packages}提供額外的命令與環境，目前有超過一千種的可用Packages，更讚的是他們都是免費的
 
-\item \emph{Packages} are libraries of extra commands and environments. There
-are thousands of freely available packages.
+\item 在\emph{導言區}使用\cmdbs{usepackage}命令以載入所有我們想要的Packages
 
-\item We have to load each of the packages we want to use with a
-\cmdbs{usepackage} command in the \emph{preamble}.
-
-\item Example: \bftt{amsmath} from the American Mathematical Society.
+\item 例子：美國數學家協會的\bftt{amsmath}
 \begin{minted}[fontsize=\small,frame=single]{latex}
 \documentclass{article}
-\usepackage{amsmath} % preamble
+\usepackage{amsmath} %導言區
 \begin{document}
-% now we can use commands from amsmath here...
+% 現在你可以在這裡使用amsmath提供的命令與環境
 \end{document}
 \end{minted}
 \end{itemize}
@@ -393,26 +375,24 @@ are thousands of freely available packages.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Examples with \bftt{amsmath}}
+\begin{frame}[fragile]{\insertsubsection{}：使用\bftt{amsmath}的例子}
 \begin{itemize}
-\item Use \bftt{equation*} (``equation-star'') for unnumbered equations.
+\item 使用\bftt{equation*} (``equation-star'')創造未標數字的方程式
 \begin{exampletwouptiny}
 \begin{equation*}
   \Omega = \sum_{k=1}^{n} \omega_k
 \end{equation*}
 \end{exampletwouptiny}
-\item \LaTeX{} treats adjacent letters as variables multiplied together, which
-is not always what you want. \bftt{amsmath} defines commands for many common
-mathematical operators.
+\item \LaTeX{} 會將相鄰的字母視為相乘的變數，有時候會達不到你想要的效果，\bftt{amsmath}定義了許多常用的數學運算子
 \begin{exampletwouptiny}
-\begin{equation*} % bad!
+\begin{equation*} % 糟糕！
  min_{x,y} (1-x)^2 + 100(y-x^2)^2
 \end{equation*}
-\begin{equation*} % good!
+\begin{equation*} % 好多了！
 \min_{x,y}{(1-x)^2 + 100(y-x^2)^2}
 \end{equation*}
 \end{exampletwouptiny}
-\item You can use \cmdbs{operatorname} for others.
+\item 你也可以利用\cmdbs{operatorname}來將文字轉換成運算子
 \begin{exampletwouptiny}
 \begin{equation*}
 \beta_i =
@@ -426,15 +406,15 @@ mathematical operators.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsubsection{}: Examples with \bftt{amsmath}}
+\begin{frame}[fragile]{\insertsubsection{}：使用\bftt{amsmath}的例子}
 \begin{itemize}{\small
-\item Align a sequence of equations at the equals sign
+\item 將一連串的方程式按照等號排列
 \begin{align*}
 (x+1)^3 &= (x+1)(x+1)(x+1) \\
         &= (x+1)(x^2 + 2x + 1) \\
         &= x^3 + 3x^2 + 3x + 1
 \end{align*}
-with the \bftt{align*} environment.
+利用\bftt{align*}環境
 
 % for whatever reason, this doesn't play well with the twoup environment
 \begin{minted}[fontsize=\small,frame=single]{latex}
@@ -444,10 +424,8 @@ with the \bftt{align*} environment.
         &= x^3 + 3x^2 + 3x + 1
 \end{align*}
 \end{minted}
-\item An ampersand \keystrokebftt{\&} separates the left column (before the
-$=$) from the right column (after the $=$).
-\item A double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} starts a new
-line.
+\item 與號\keystrokebftt{\&}將左欄(等號之前)與右欄(等號之後)分離
+\item 雙重反斜槓\keystrokebftt{\bs}\keystrokebftt{\bs} 開始新行
 }\end{itemize}
 \end{frame}
 
@@ -457,7 +435,7 @@ line.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{牛刀小試}
 
-\begin{block}{Typeset this in \LaTeX:}
+\begin{block}{嘗試利用\LaTeX\ 為下面這段文字排版：}
 Let $X_1, X_2, \ldots, X_n$ be a sequence of independent and identically
 distributed random variables with $\operatorname{E}[X_i] = \mu$ and
 $\operatorname{Var}[X_i] = \sigma^2 < \infty$, and let
@@ -470,31 +448,101 @@ $\sqrt{n}(S_n - \mu)$ converge in distribution to a normal $N(0, \sigma^2)$.
 \vskip 2ex
 \begin{center}
 \fbox{\href{\wlnewdoc{basics-exercise-2.tex}}{%
-Click to open this exercise in \wllogo{}}}
+點擊這裡以在\wllogo{}中開啟}}
 \end{center}
 \begin{itemize}
-\item Hint: the command for $\infty$ is \cmdbs{infty}.
-\item Once you've tried,
+\item 提示： $\infty$符號的命令是\cmdbs{infty}.
+\item 如果你嘗試過了
 \fbox{\href{\wlnewdoc{basics-exercise-2-solution.tex}}{%
-click here to see my solution}}.
+點擊這裡來看解答}}.
 \end{itemize}
 \end{frame}
+\subsection{中文排版}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{End of Part 1}
+\begin{frame}{\insertsubsection{}：基礎}
+\begin{itemize}
+\item 讓\LaTeX\ 看得懂unicode編碼
+\begin{itemize}
+\item 使用 xelatex 或 lualatex
+\end{itemize}
+\item 使用支持unicode的中文字體
+\begin{itemize}
+\item \href{https://www.overleaf.com/learn/latex/Questions/Which_OTF_or_TTF_fonts_are_supported_via_fontspec\%3F}{\wllogo\ 上的可用字體}
+\item 在終端機使用fc-list -f ``\%{family}\textbackslash n'' :lang=zh > zhfont.txt以查看電腦上的可用字體
+\end{itemize}
+\item 使用支持中文的 Package
+\begin{itemize}
+\item 在 Xe\LaTeX\ 上用 xeCJK
+\item 在 Lua\LaTeX\ 上用luatexja
+\item 使用 CJK (過時了)
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}：xeCJK}
+\begin{itemize}
+\item 最簡單的用法：\\
+\begin{minted}[frame=single]{latex}
+\documentclass{article}
+\usepackage{xeCJK}%使用xeCJK package
+\setCJKmainfont{TW-Kai}%設定主要字體
+\begin{document}
+你好！世界%現在就可以使用中文了
+\end{document}
+\end{minted}
+\item 請記得使用Xe\LaTeX\ 編譯
+\item 除了主要字體外，斜體與等寬字體需另行設定，\cmd{setCJKsansfont}設定斜體，\cmd{setCJKmonofont}設定等寬字體
+\item 更多的技巧請參考\href{https://ftp.ntou.edu.tw/ctan/macros/xetex/latex/xecjk/xeCJK.pdf}{ xeCJK Package 使用手冊}
+\end{itemize}
+\end{frame}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}[fragile]{\insertsubsection{}：luatexja}
+\begin{itemize}
+\item 最簡單的用法：\\
+\begin{minted}[frame=single]{latex}
+\documentclass{article}
+\usepackage{luatexja}%使用luatexja package
+%\usepackage{luatexja-fontspec}
+%加上-fontspec才可以設定主要字體
+\setmainjfont{TW-Kai}%設定主要字體
+\begin{document}
+你好！世界%現在就可以使用中文了
+\end{document}
+\end{minted}
+\item 請記得使用Lua\LaTeX\ 編譯
+\item 此Package原先是專為日文設計的
+\item 更多的技巧請參考\href{https://ftp.ntou.edu.tw/ctan/macros/luatex/generic/luatexja/doc/luatexja-en.pdf}{ luatexja Package 使用手冊}
+\end{itemize}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Part 1的總結}
 \begin{itemize}
 \item 恭喜！你已經學會了如何\ldots
 \begin{itemize}
-\item 在\LaTeX\ 中排版文字
+\item 利用\LaTeX\ 排版
 \item 使用多種不同的指令
 \item 處理發生的問題
 \item 排版美麗的數學公式
 \item 使用多種不同的環境
-\item 使用巨集
+\item 使用 Package
+\item 使用中文
 \end{itemize}
-\item 這真神奇
+\item 這真驚艷
 \item 在Part 2我們將探討如何使用\LaTeX{}寫下有結構的文件，包含了小節、交互引用、圖片和參考書目，下集待續。
 \end{itemize}
 \end{frame}
