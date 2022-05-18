@@ -2,7 +2,7 @@
 
 \input{preamble.tex}
 
-\subtitle{Part 3: Not Just Papers: Presentations \& More}
+\subtitle{第三部：不只是文件！簡報\& 更多}
 
 \newcommand{\alice}[1]{\todo[color=green!40]{#1}}
 \newcommand{\bob}[1]{\todo[color=purple!40]{#1}}
@@ -41,17 +41,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\LaTeX{} Recap}
+\section{回顧\LaTeX{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item You write your document in \texttt{plain text} with \cmd{commands} that
-describe its structure and meaning.
-\item The \texttt{latex} program processes your text and commands to produce a
-beautifully formatted document.
+\item 你將文件用純文字(plain text)與描述文字結構和意義的命令(\cmd{commands})
+\item \texttt{latex} 將你的文字與命令轉換成格式優美的文件
 \end{itemize}
 \vskip 2ex
 \begin{center}
@@ -69,12 +67,11 @@ The rain in Spain falls \emph{mainly} on the plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Commands \& Arguments}
+\begin{frame}[fragile]{\insertsection{}：命令\& 參數}
 \begin{itemize}
-\item A command starts with a \emph{backslash} \keystrokebftt{\bs}.
-\item Some commands take an \emph{argument} in curly braces \keystrokebftt{\{}
-\keystrokebftt{\}}.
-\item Some commands also take \emph{optional arguments} in square brackets \keystrokebftt{[} \keystrokebftt{]}.
+\item 命令以\emph{反斜線}開頭的\keystrokebftt{\bs}.
+\item 一些命令接受在花括號 \keystrokebftt{\{}\keystrokebftt{\}}.中的\emph{參數}
+\item 有些命令接受在中括號\keystrokebftt{[} \keystrokebftt{]}中的\emph{可選參數}
 \vskip 2ex
 \begin{exampletwouptiny}
 \includegraphics[
@@ -92,20 +89,19 @@ The rain in Spain falls \emph{mainly} on the plain.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Environments}
+\begin{frame}[fragile]{\insertsection{}：環境}
 \begin{itemize}
-\item The \cmdbs{begin} and \cmdbs{end} commands are used to create many
-different environments --- contexts.
+\item \cmdbs{begin}與\cmdbs{end}命令被用來創造許多不同的環境
 
-\item The \bftt{itemize} and \bftt{enumerate} environments make lists.
+\item \bftt{itemize}與\bftt{enumerate} 環境創造列表
 \vskip 2ex
 \begin{exampletwouptiny}
-\begin{itemize} % for bullet points
+\begin{itemize} %以實心圓圈為標示
 \item Biscuits
 \item Tea
 \end{itemize}
 
-\begin{enumerate} % for numbers
+\begin{enumerate} %以數字為標示
 \item Biscuits
 \item Tea
 \end{enumerate}
@@ -117,9 +113,9 @@ different environments --- contexts.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Mathematics}
+\begin{frame}[fragile]{\insertsection{}：數學方程式}
 \begin{itemize}
-\item The \bftt{equation} environment makes a numbered equation.
+\item \bftt{equation}環境創造編號過的方程式
 \begin{exampletwouptiny}
 \begin{equation}
   \sum_{k=1}^{n} \frac{1}{2^k}
@@ -127,36 +123,32 @@ different environments --- contexts.
 \end{exampletwouptiny}
 \vskip 2ex
 
-\item Use dollar signs \keystrokebftt{\$} to mark mathematics in text.\\[1ex]
+\item 使用錢幣符號\keystrokebftt{\$} 標記文字中的數學方程式\\[1ex]
 \begin{exampletwouptiny}
-% not so good:
+% 並不是那麼好：
 Let a and b be distinct positive
 integers, and let c = a - b + 1.
 
-% much better:
+% 好多了：
 Let $a$ and $b$ be distinct positive
 integers, and let $c = a - b + 1$.
 \end{exampletwouptiny}
 \vskip 2ex
-\item Always use dollar signs in pairs --- one to begin the mathematics, and one
-to end it.
+\item 永遠記得使用一對錢幣符號 --- 一個開始一個結束
 \vskip 1em
-{\scriptsize In fact, we could have written \bftt{\$...\$} as
-\cmdbegin{math}\bftt{...}\cmdend{math}.}
+{\scriptsize 事實上\bftt{\$...\$}與\cmdbegin{math}\bftt{...}\cmdend{math}是等價的}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Document Structure}
+\begin{frame}[fragile]{\insertsection{}：文件結構}
 \begin{itemize}{\small
-\item Starts with the \cmdbs{documentclass} --- what type of document.
-\item Metadata (\cmdbs{title} and \cmdbs{author}) and packages in the
-preamble.
-\item Content between \cmdbegin{document} and \cmdend{document}.
-\item The \cmdbs{maketitle} command creates the title; \cmdbs{section} commands
-create numbered sections.
+\item 以\cmdbs{documentclass}為開始 --- 文件的種類
+\item 在導言區輸入重要資料(\cmdbs{title}和\cmdbs{author})還有使用的 package
+\item 內容夾在\cmdbegin{document}與\cmdend{document}的中間
+\item \cmdbs{maketitle}命令創造標題\cmdbs{section}創造被編號的節
 }\end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -171,27 +163,27 @@ create numbered sections.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
+\begin{frame}[fragile]{\insertsection{}：小試身手}
 
 \begin{enumerate}
-\item Here is the text for a short article:\footnote{Based on \url{http://www.cgd.ucar.edu/cms/agu/scientific_talk.html}}
+\item 這裡有一篇短文\footnote{基於\url{http://www.cgd.ucar.edu/cms/agu/scientific_talk.html}}
 \begin{center}
 \fbox{\href{\wlnewdoc{recap-exercise.tex}}{%
-Click to open this exercise in \wllogo{}}}
+點擊以在\wllogo{}中開啟}}
 \end{center}
 \vskip 2ex
-\item Add \LaTeX{} commands to the text to make it look like this one:
+\item 加一些\LaTeX{}命令，已讓他看起來像這樣：
 \begin{center}
 \fbox{\href{\fileuri/recap-exercise-solution.pdf}{%
-Click to open the model document}}
+點擊以開啟範例}}
 \end{center}
 \end{enumerate}
 
-\begin{block}{Hints}
+\begin{block}{提示}
 \begin{itemize}
-\item Use the \bftt{enumerate} and \bftt{itemize} environments for lists.
-\item To typeset a \keystrokebftt{\%} percent sign, \emph{escape} it with a backslash (\cmdbs{\%}).
-\item To typeset the equation, use \cmdbs{frac} for the fraction and the \cmdbs{left(} and \cmdbs{right)} commands for the parentheses.
+\item 使用\bftt{enumerate}和\bftt{itemize}環境來創立列表
+\item 為了打出百分比符號\keystrokebftt{\%}使用反斜槓(\cmdbs{\%})來讓他 \emph{跳脫}原有的意義
+\item 在方程式中使用\cmdbs{frac}命令打出分數，\cmdbs{left(}和\cmdbs{right)}命令打出括號
 \end{itemize}
 \end{block}
 \end{frame}
@@ -199,17 +191,16 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Presentations with \protect\bftt{beamer}}
+\section{使用\protect\bftt{beamer}製作簡報}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item Beamer is a package for creating presentations (such as this one!) in
-\LaTeX{}.
-\item It provides the \bftt{beamer} document class.
-\item Use the \bftt{frame} environment to create slides.
+\item Beamer是用來製作簡報的\LaTeX{} package （就像這個）
+\item 它提供了文件類型：\bftt{beamer}
+\item 使用\bftt{frame}環境製作投影片
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -224,7 +215,8 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Following Along}
+\label{待翻譯}
+\begin{frame}[fragile]{\insertsection{}：Following Along}
 
 \begin{itemize}
 \item As we go through the following slides, try out the examples by typing them
@@ -241,11 +233,11 @@ Click to open the example document in \wllogo{}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{\insertsection: Frames}
+\frametitle{\insertsection：Frames環境}
 \begin{itemize}
-\item Use \cmdbs{frametitle} to give the frame a title.
-\item Then add content to the frame.
-\item The source for this frame looks like:
+\item 使用\cmdbs{frametitle}賦予投影片標題
+\item 然後把內容打在Frames環境中
+\item 這張投影片的原始碼如下：
 \vskip 2ex
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
   {beamer-frame.tex}
@@ -255,12 +247,10 @@ Click to open the example document in \wllogo{}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Sections}
+\begin{frame}[fragile]{\insertsection：節}
 \begin{itemize}
-\item You can use \cmdbs{section}s to group your \bftt{frame}s, and
-\bftt{beamer} will use them to create an automatic outline.
-\item To generate an outline, use the \cmdbs{tableofcontents} command. Here's
-one for this presentation. The \bftt{currentsection} option highlights the current section.
+\item 你可以使用\cmdbs{section}將\bftt{frame}分組\bftt{beamer}可以利用他們自動產生大綱
+\item 使用\cmdbs{tableofcontents}來產生大綱，\bftt{currentsection}選項強調現在所在的section
 \vskip 2ex
 \begin{exampletwouptiny}
 \tableofcontents[currentsection]
@@ -271,15 +261,13 @@ one for this presentation. The \bftt{currentsection} option highlights the curre
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Multiple Columns}
+\begin{frame}[fragile]{\insertsection：多欄}
 \begin{columns}
 \begin{column}{0.4\textwidth}
 \begin{itemize}
-\item Use the \bftt{columns} and \bftt{column} environments to break the slide
-into columns.
-\item The argument for each \bftt{column} determines its width.
-\item See also the \bftt{multicol} package, which automatically breaks your
-content into columns.
+\item 使用\bftt{columns}和\bftt{column}環境將投影片分欄
+\item \bftt{column}的參數決定了該欄的寬度
+\item 也可以去看看\bftt{multicol} package，他會自動將你的內容分欄
 \end{itemize}
 \end{column}
 \begin{column}{0.6\textwidth}
@@ -287,13 +275,13 @@ content into columns.
 \begin{columns}
   \begin{column}{0.4\textwidth}
     \begin{itemize}
-    \item Use the columns ...
-    \item The argument ...
-    \item See also the ...
+    \item 使用\bftt{columns} ...
+    \item \bftt{column}的參數 ...
+    \item 也可以去看看 ...
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
-    % second column
+    % 第二欄
   \end{column}
 \end{columns}
 \end{minted}
@@ -304,10 +292,10 @@ content into columns.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Highlights}
+\begin{frame}[fragile]{\insertsection：強調}
 \begin{itemize}
 
-\item Use \cmdbs{emph} or \cmdbs{alert} to highlight:
+\item 使用\cmdbs{emph}或\cmdbs{alert}來強調：
 \vskip 1ex
 \begin{exampletwouptiny}
 I should \emph{emphasise} that
@@ -315,7 +303,7 @@ this is an \alert{important} point.
 \end{exampletwouptiny}
 \vskip 1ex
 
-\item Or specify bold face or italics:
+\item 或使用粗體和斜體
 \vskip 1ex
 \begin{exampletwouptiny}
 Text in \textbf{bold face}.
@@ -323,25 +311,24 @@ Text in \textit{italics}.
 \end{exampletwouptiny}
 \vskip 1ex
 
-\item Or specify a color (American spelling):
+\item 或使用顏色：
 \vskip 1ex
 \begin{exampletwouptiny}
 It \textcolor{red}{stops}
 and \textcolor{green}{starts}.
 \end{exampletwouptiny}
 \vskip 1ex
-\item See \url{http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-25.html}
-for more colors \& custom colors.
+\item 在\url{http://www.math.umbc.edu/~rouben/beamer/quickstart-Z-H-25.html}找到更多顏色或自定義顏色
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Figures}
+\begin{frame}[fragile]{\insertsection：圖片}
 \begin{itemize}
-\item Use \cmdbs{includegraphics} from the \bftt{graphicx} package.
-\item The \bftt{figure} environment centers by default, in \bftt{beamer}.
+\item 使用\bftt{graphicx} package提供的\cmdbs{includegraphics}命令
+\item \bftt{figure}環境在\bftt{beamer}中預設為置中
 \vskip 2ex
 \begin{exampletwouptiny}
 \begin{figure}
@@ -357,11 +344,11 @@ for more colors \& custom colors.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Tables}
+\begin{frame}[fragile]{\insertsection：表格}
 \begin{itemize}
-\item Tables in \LaTeX{} take some getting used to.
-\item Use the \bftt{tabular} environment from the \bftt{tabularx} package.
-\item The argument specifies column alignment --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
+\item 在\LaTeX{}中使用表格需經過一番適應
+\item 使用\bftt{tabularx} package 提供的\bftt{tabular}環境
+\item 指定表格靠齊位置的參數 --- \textbf{l}eft, \textbf{r}ight, \textbf{r}ight.
 \begin{exampletwouptiny}
 \begin{tabular}{lrr}
 Item   & Qty & Unit \$ \\
@@ -370,7 +357,7 @@ Gadget & 2   & 399.99  \\
 Cable  & 3   & 19.99   \\
 \end{tabular}
 \end{exampletwouptiny}
-\item It also specifies vertical lines; use \cmdbs{hline} for horizontal lines.
+\item 這同時也可以指定表格中的垂直線，使用\cmdbs{hline}命令指定水平線
 \begin{exampletwouptiny}
 \begin{tabular}{|l|r|r|} \hline
 Item   & Qty & Unit \$ \\\hline
@@ -379,27 +366,27 @@ Gadget & 2   & 399.99  \\
 Cable  & 3   & 19.99   \\\hline
 \end{tabular}
 \end{exampletwouptiny}
-\item Use an ampersand \keystrokebftt{\&} to separate columns and a double backslash \keystrokebftt{\bs}\keystrokebftt{\bs} to start a new row.
+\item 使用與號\keystrokebftt{\&}來接每一格分開，使用雙重反斜槓\keystrokebftt{\bs}\keystrokebftt{\bs}來換行(就像 part 1 中提過的\bftt{align*}環境)
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Blocks}
+\begin{frame}[fragile]{\insertsection：Blocks}
 \begin{itemize}
-\item A \bftt{block} environment makes a titled box.
+\item \bftt{block}環境製造有標題的箱子
 \begin{exampletwouptiny}
-\begin{block}{Interesting Fact}
-This is important.
+\begin{block}{有趣的事實}
+這很重要！
 \end{block}
 
-\begin{alertblock}{Cautionary Tale}
-This is really important!
+\begin{alertblock}{警世故事}
+這真的超重要！！！
 \end{alertblock}
 \end{exampletwouptiny}
 
-\item How exactly they look depends on the theme\ldots
+\item 箱子的外型取決於beamer的主題\ldots
 \end{itemize}
 \end{frame}
 
@@ -407,11 +394,10 @@ This is really important!
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]
-\frametitle{\insertsection: Themes}
+\frametitle{\insertsection：主題}
 \begin{itemize}
-\item Customise the look of your presentation using themes.
-\item See \url{http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html}
-for a large collection of themes.
+\item 使用主題自定義報告的外觀
+\item 在\url{http://deic.uab.es/~iblanes/beamer_gallery/index_by_theme.html}可以找到大量的主題%for a large collection of themes
 \end{itemize}
 \begin{minipage}{0.55\linewidth}
 \inputminted[fontsize=\scriptsize,frame=single,resetmargins]{latex}%
@@ -426,47 +412,46 @@ for a large collection of themes.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Animation}
+\begin{frame}[fragile]{\insertsection：動畫}
 \begin{itemize}
-\item A frame can generate multiple slides.
-\item Use the \cmdbs{pause} command to show only part of a slide.
+\item 一個frame可以產生許多投影片
+\item 使用\cmdbs{pause}命令將投影片內容分開
 \vskip 2ex
 \begin{exampletwouptinynoframe}
 \begin{itemize}
-\item Can you feel the 
-\pause \item anticipation?
+\item 你感受到
+\pause \item 暫停了嗎？
 \end{itemize}
 \end{exampletwouptinynoframe}
 \vskip 2ex
-\item There many more clever ways of making animations in \bftt{beamer}; see
-also the \cmdbs{only}, \cmdbs{alt}, and \cmdbs{uncover} commands.
+\item 更多巧妙的\bftt{beamer}動畫：參考\cmdbs{only}, \cmdbs{alt}和 \cmdbs{uncover}命令%There many more clever ways of making animations in beamer; see also the \only, \alt, and \uncover commands.
+\label{待翻譯}
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
+\begin{frame}[fragile]{\insertsection：小試身手}
 
-Recreate Peter Norvig's excellent ``Gettysburg Powerpoint Presentation'' in \bftt{beamer}.\footnote{\url{http://norvig.com/Gettysburg}}
+將Peter Norvig's excellent 的``Gettysburg Powerpoint Presentation''利用 \bftt{beamer}重置\footnote{\url{http://norvig.com/Gettysburg}}
 
 \begin{enumerate}
-\item Open this exercise in \wllogo{}:
+\item 在\wllogo{}打開練習：
 \begin{center}
 \fbox{\href{\wlnewdoc{beamer-exercise.tex}}{%
-Click to open this exercise in \wllogo{}}}
+點擊以在\wllogo{}中開啟}}
 \end{center}
 \vskip 2ex
-\item Download this image to your computer and upload it to \wllogo{} via the
-files menu.
+\item 將範例圖片下載到你的電腦裡面，再用files menu將圖片上傳到\wllogo{}
 \begin{center}
-\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{Click to download image}}
+\fbox{\href{\fileuri/gettysburg_graph.png?dl=1}{點擊以下載圖片}}
 \end{center}
 \vskip 2ex
-\item Add \LaTeX{} commands to the text to make it look like this one:
+\item 加入\LaTeX{}命令使他看起來像範例
 \begin{center}
 \fbox{\href{\fileuri/beamer-exercise-solution.pdf}{%
-Click to open the model document}}
+點擊以下載範例檔案}}
 \end{center}
 \end{enumerate}
 \end{frame}
@@ -474,25 +459,24 @@ Click to open the model document}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Drawings with \protect\tikzname}
+\section{利用\protect\tikzname{}畫畫}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item \tikzname{} is a package for drawing figures in \LaTeX.
-\item It defines a powerful drawing language inside \LaTeX{}. Short programs can
-draw surprisingly complicated things.
+\item \tikzname{}是個用來畫畫的\LaTeX{}package
+\item 他在\LaTeX{}中定義了強大繪圖語言，簡單的程式碼就可以創造讓人驚豔的圖片
 \begin{figure}
 \href{http://www.texample.net/tikz/examples/rotated-triangle/}{%
   \includegraphics[width=0.35\textwidth]{rotated-triangle}}
 \end{figure}
-\item We'll start with simple things. To draw a line in \tikzname:
+\item 我們會從簡單的事物開始，在\tikzname{}中畫直線：
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
-\draw (0,0) -- (1,1); % a line
+\draw (0,0) -- (1,1); % 一條線
 \end{tikzpicture}
 \end{exampletwouptiny}
 \end{itemize}
@@ -501,9 +485,9 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Coordinates}
+\begin{frame}[fragile]{\insertsection：座標}
 \begin{itemize}
-\item The default coordinates are centimeters, with the usual sense: 
+\item 預設的座標單位是公分：
 \begin{figure}
 \begin{tikzpicture}[scale=0.5]
 \draw[help lines] (0,0) grid (3,3);
@@ -513,7 +497,7 @@ draw surprisingly complicated things.
 \node[above left] at (0,3) {$(0,3)$};
 \end{tikzpicture}
 \end{figure}
-\item It helps to draw a grid when you are working with \tikzname:
+\item 在使用\tikzname{}時畫一個網格是個好主意：
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -526,10 +510,10 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Lines}
+\begin{frame}[fragile]{\insertsection：直線}
 \begin{itemize}
-\item Arrow heads and line styles are specified as options to the \cmdbs{draw} command.
-\item End each draw command with a \keystrokebftt{;} semicolon.
+\item 箭頭與線條格式是\cmdbs{draw}的可選參數
+\item 每一個draw命令後都用分號\keystrokebftt{;}來結束
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -545,20 +529,20 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Paths}
+\begin{frame}[fragile]{\insertsection：路徑}
 \begin{itemize}
-\item You can specify multiple points to form a path.
-\item Arrows will appear only at the ends of the path.
+\item 你可以指定多個點來形成一條路徑
+\item 箭頭只會在路徑的終點出現
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (3,3);
-% axes:
+% 座標軸
 \draw[<->, thick] (0,3)--(0,0)--(3,0);
-% diamond:
+% 鑽石
 \draw (1.5,0.5) -- (2.5,1.5) -- 
       (1.5,2.5) -- (0.5,1.5) --
-      cycle; % close the path
+      cycle; % 封閉路徑
 \end{tikzpicture}
 \end{exampletwouptiny}
 \end{itemize}
@@ -567,17 +551,17 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Colours}
+\begin{frame}[fragile]{\insertsection：顏色}
 \begin{itemize}
-\item Colours are also specified as options to \cmdbs{draw}.
+\item 箭頭與線條格式也是\cmdbs{draw}的可選參數
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
 \draw[help lines] (0,0) grid (3,3);
-% axes
+% 座標軸
 \draw[<->, thick, red]
   (0,3)--(0,0)--(3,0); 
-% diamond
+% 鑽石
 \draw[thick, blue, fill=yellow]
   (1.5,0.5) -- (2.5,1.5) -- 
   (1.5,2.5) -- (0.5,1.5) --
@@ -590,9 +574,9 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Shapes}
+\begin{frame}[fragile]{\insertsection：形狀}
 \begin{itemize}
-\item \tikzname{} has built-in commands for simple shapes.
+\item \tikzname{}內建了指令來畫出簡單圖形
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -607,10 +591,10 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Nodes \& Labels}
+\begin{frame}[fragile]{\insertsection：節點 \& 標籤}
 \begin{itemize}
-\item Use nodes to place text (and math) in \tikzname{} drawings.
-\item You can also use nodes as coordinates --- useful for diagrams.
+\item 在\tikzname{}圖畫中，使用節點來放置文字（還有數學方程式）
+\item 你也可以將節點當作座標點來使用 --- 對圖表很有用
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}
@@ -628,17 +612,17 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Functions}
+\begin{frame}[fragile]{\insertsection：函數}
 \begin{itemize}
-\item You can even plot some simple functions.
+\item 你甚至可以畫出一些簡單的函數圖形
 \vskip 1ex
 \begin{exampletwouptiny}
 \begin{tikzpicture}[scale=0.5]
-% y axis
+% y 軸
 \draw[<->, thick] (0,2) -- (0,-2);
-% x axis
+% x 軸
 \draw[ ->, thick] (0,0) -- (7, 0); 
-% curves
+% 曲線
 \draw[cyan,domain=0:2*pi]
   plot (\x, {sin(\x r)});
 \draw[magenta,domain=0:2*pi]
@@ -651,9 +635,9 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Examples}
+\begin{frame}[fragile]{\insertsection：更多例子}
 \begin{itemize}
-\item Check out \fbox{\href{http://texample.net/tikz/}{\TeX{}ample.net}} for many \tikzname{} examples:
+\item 想要更多\tikzname{}的例子嗎？查看 \fbox{\href{http://texample.net/tikz/}{\TeX{}ample.net}}
 \end{itemize}
 \begin{figure}
 \href{http://texample.net/tikz/examples/escher-brick-penrose-triangle/}{%
@@ -668,8 +652,8 @@ draw surprisingly complicated things.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{\insertsection: Exercise}
-Draw this in \tikzname:\footnote{Based on \url{http://xkcd.com/1022}}
+\begin{frame}[fragile]{\insertsection：小試身手}
+利用\tikzname{}畫出這個：\footnote{基於\url{http://xkcd.com/1022}}
 \begin{figure}
 \input{tikz-exercise-solution}
 \end{figure}
@@ -678,29 +662,28 @@ Draw this in \tikzname:\footnote{Based on \url{http://xkcd.com/1022}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Notes with \protect\bftt{todonotes}}
+\section{註釋：\protect\bftt{todonotes}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item The \cmdbs{todo} command from the \bftt{todonotes} package is great for
-leaving notes to yourself and your collaborators.
+\item \bftt{todonotes} package提供的\cmdbs{todo}是個為你自己與合作者留下註釋的好選擇
 \begin{exampletwouptiny}
-\todo{add results}
-\todo[color=blue!20]{fix method}
+\todo{加入結果}
+\todo[color=blue!20]{修復模型}
 \end{exampletwouptiny}
 \vskip 2ex
-\item Pro Tip: define your own commands with \cmdbs{newcommand}
+\item 進階技巧：利用\cmdbs{newcommand}自定義命令
 \begin{minted}[fontsize=\scriptsize,frame=single]{latex}
 \newcommand{\alice}[1]{\todo[color=green!40]{#1}}
 \newcommand{\bob}[1]{\todo[color=purple!40]{#1}}
 \end{minted}
-This can save a lot of typing:
+這可以省下很多時間：
 \begin{exampletwouptiny}
-\alice{add results}
-\bob{fix method}
+\alice{加入結果}
+\bob{修復模型}
 \end{exampletwouptiny}
 \end{itemize}
 \end{frame}
@@ -712,9 +695,8 @@ This can save a lot of typing:
 \begin{columns}
   \begin{column}{0.4\textwidth}
     \begin{itemize}
-    \item Only inline notes are supported with beamer, but margin notes are
-    supported for normal documents.
-    \item There is also a handy \cmdbs{listoftodos} command.
+    \item 只有beamer支持行內註釋，但可以在使用邊註代替
+    \item 這裡也有方便的\cmdbs{listoftodos}命令
     \end{itemize}
   \end{column}
   \begin{column}{0.6\textwidth}
@@ -726,16 +708,15 @@ This can save a lot of typing:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Spreadsheets with \protect\bftt{spreadtab}}
+\section{試算表：\protect\bftt{spreadtab}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}[fragile]{\insertsection}
 \begin{itemize}
-\item Now that you've seen how \LaTeX{} can replace Word and PowerPoint, what
-about Excel?
-\item Homework: try the \fbox{\href{http://www.ctan.org/pkg/spreadtab}{\bftt{spreadtab} package}}!
+\item 現在你知道了如何\LaTeX{}代替 word 和 powerpoint 那 excel 呢？
+\item 回家作業： 試試\fbox{\href{http://www.ctan.org/pkg/spreadtab}{\bftt{spreadtab} package}}吧!
 \end{itemize}
 \end{frame}
 
@@ -744,7 +725,7 @@ about Excel?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \begin{center}
-Thanks, and happy \TeX{}ing!
+感謝聆聽，\TeX{}ing愉快！
 \end{center}
 \end{frame}
 
