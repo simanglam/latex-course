@@ -29,7 +29,7 @@
 %
 \item 強大、靈活 --- 你甚至可以自行擴展
 \begin{itemize}
-\item 針對論文、報告、試算表\ldots\ 的巨集 \ldots
+\item 針對論文、報告、試算表等等的巨集
 \end{itemize}
 \end{itemize}
 \end{frame}
@@ -79,13 +79,13 @@ The rain in Spain falls \emph{mainly} on the plain.
 \end{equation}
 \end{exampletwoup}
 
-\tiny{Image license: \href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
+\tiny{圖片授權：\href{https://pixabay.com/en/animal-apple-attractive-beautiful-1239390/}{CC0}}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{態度調整}
+\begin{frame}[fragile]{使用之前}
 
 \begin{itemize}
 \item 使用命令去描述他是什麼，而不是他是看起來怎樣
@@ -108,16 +108,16 @@ The rain in Spain falls \emph{mainly} on the plain.
 \item 最簡單的\LaTeX{}文件：
 \inputminted[frame=single]{latex}{basics.tex}
 \item 命令以\emph{反斜線}開頭的\keystrokebftt{\bs}.
-\item 所有文件都以\cmdbs{documentclass}為開頭
-\item \emph{引數}被花括號包圍\keystrokebftt{\{} \keystrokebftt{\}}告訴 \LaTeX{}我們想要的文件類型\bftt{article}.
-\item 百分符號\keystrokebftt{\%}開始註解\emph{comment} --- \LaTeX{}會忽略該行剩餘的部分
+\item 所有的文件開頭都是\cmdbs{documentclass}
+\item \emph{必選參數}被花括號包圍\keystrokebftt{\{} \keystrokebftt{\}}告訴 \LaTeX{}我們想要的文件類型是\bftt{article}.
+\item 百分符號\keystrokebftt{\%}開始註解 --- \LaTeX{}會忽略該行剩餘的部分
 \end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}[fragile]{使用\wllogo\insertsubsection{}}
+\begin{frame}[fragile]{使用\wllogo\ \insertsubsection{}}
 \begin{itemize}
 \item Overleaf是線上的\LaTeX 編譯器
 \item 他自動編譯你的 \LaTeX{}文件並產出結果
@@ -142,7 +142,7 @@ The rain in Spain falls \emph{mainly} on the plain.
 \small
 \begin{itemize}
 \item 將你的文字打在 \cmdbegin{document}與\cmdend{document}之間
-\item 大多數的時間就和word無異，只需普通的打出文件內容就好%怪怪的，要修
+\item 大多數的時間就和Word無異，不用多想的將內容打進文件%怪怪的，要修
 \begin{exampletwouptiny}
 Words are separated by one or more
 spaces.
@@ -150,7 +150,7 @@ spaces.
 Paragraphs are separated by one
 or more blank lines.
 \end{exampletwouptiny}
-\item 原始碼中的空白並不代表真實的輸出
+\item 原始碼中的空白並不代表實際的輸出
 \begin{exampletwouptiny}
 The   rain       in Spain
 falls mainly on the plain.
@@ -192,7 +192,7 @@ Double quotes: ``text''.
 \begin{frame}[fragile]{處理錯誤}
 \begin{itemize}
 \item \LaTeX{} 在編譯時也可能會出錯，如果它出錯了它將會產出錯誤訊息並停止編譯檔案，你必須將修復這個錯誤，否則\LaTeX{} 將不會產生任何的輸出
-\item 舉個例子，如果你將\cmdbs{emph}誤拼成\cmdbs{meph}, \LaTeX{}會停止編譯並跳出 ``undefined control sequence''的錯誤，因為``meph''並不是已知的命令
+\item 舉個例子，如果你將\cmdbs{emph}誤拼成\cmdbs{meph} \LaTeX{}會停止編譯並跳出 ``undefined control sequence''的錯誤，因為``meph''並不是已知的命令
 \end{itemize}
 \begin{block}{面對錯誤的的建議}
 \begin{enumerate}
